@@ -8,7 +8,7 @@ import shutil
 import copy
 
 def getPrompt(full_data):
-    if infer_kind == "unopt2Opt":
+    if infer_kind == "Unopt2Opt":
         return "```".join(full_data.split("```")[:3])[:-1]
     elif infer_kind == "CodeRefine" or infer_kind == "CodeRefine-off-retriever":
         return "```".join(full_data.split("```")[:-2])[:-1]
@@ -133,7 +133,7 @@ def concat(test_dataset, tokenizer, out_truth_dir, wrong_res, out_unopt_dir, out
 parser = argparse.ArgumentParser(description='Infer')
 parser.add_argument('-m','--model')
 parser.add_argument('-token-num','--token_num')
-parser.add_argument('-infer-kind','--infer_kind')
+parser.add_argument('-infer-kind','--infer_kind', required=True, help="'CodeRefine' or 'CodeRefine-off-retriever' or 'Unopt2Opt'.")
 parser.add_argument('-test-dataset-dir', '--test_dataset_dir')
 parser.add_argument('-adapters-dir', '--adapters_dir')
 parser.add_argument('-output-dir', '--output_dir')

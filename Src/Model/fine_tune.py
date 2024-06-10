@@ -36,15 +36,14 @@ parser.add_argument('-lr','--lr')
 parser.add_argument('-dataset-dir', '--dataset_dir')
 parser.add_argument('-epochs', '--epochs')
 parser.add_argument('-output-dir', '--output_dir')
-parser.add_argument('-adapters-dir', '--adapters_dir')
-
+parser.add_argument('-adapters-dir', '--adapters_dir', default=None, help="If you want to resume from checkpoint, please give the adapter dir.")
 
 args = parser.parse_args()
 base_model = args.model
-token_num = args.token_num
-lr = args.lr
+token_num = int(args.token_num)
+lr = float(args.lr)
 dataset_dir = args.dataset_dir
-num_train_epochs = args.epochs
+num_train_epochs = int(args.epochs)
 output_dir = args.output_dir
 adapters_dir = args.adapters_dir
 
