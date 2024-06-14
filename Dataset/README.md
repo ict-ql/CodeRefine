@@ -1,1 +1,1 @@
-We provide all the datasets used in paper in hugging face with name `IRRefine`.
+We provide all the datasets used in paper in hugging face.
