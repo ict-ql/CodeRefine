@@ -38,7 +38,7 @@ def call_program(cmd):
     return {'success': p.returncode == 0, 'time': t1-t0, 'stdout': stdout_result.decode('utf-8')}
 
 def compile(flag, input_file_path, output_file_path):
-    llvm_path="/home/ql/SRC/llvm11/llvm/build"
+    llvm_path="llvm11/llvm/build"
     cmd = llvm_path+"/bin/"+"opt "+flag+" "+input_file_path+" -S -o "+output_file_path
     opt_res = call_program(cmd)
     assert opt_res['success'], "fail to run `"+cmd+"`"
